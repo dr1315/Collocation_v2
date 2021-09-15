@@ -6,7 +6,13 @@ CALIOP file specified.
 
 import sys
 import os
-sys.path.append("/g/data/k10/dr1709/code/Personal/Tools")
+sys.path.append(
+  os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    "..",
+    "Tools"
+  )
+)
 from collocation import get_him_folders, read_list
 
 
