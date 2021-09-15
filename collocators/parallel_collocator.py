@@ -12,7 +12,13 @@ from time import time
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 from mpl_toolkits.mplot3d import Axes3D
-sys.path.append("/g/data/k10/dr1709/code/Personal/Tools")
+sys.path.append(
+  os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    "..",
+    "Tools"
+  )
+)
 from collocation import brute_force_parallel, clean_up_df, save_df, read_list
 from caliop_tools import number_to_bit, custom_feature_conversion, calipso_to_datetime
 
