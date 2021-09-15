@@ -1,7 +1,13 @@
 import sys
 import os
 from pyhdf.SD import SD, SDC
-sys.path.append("/g/data/k10/dr1709/code/Personal/Tools")
+sys.path.append(
+  os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    "..",
+    "Tools"
+  )
+)
 from collocation import find_possible_collocated_him_folders, write_list
 
 
