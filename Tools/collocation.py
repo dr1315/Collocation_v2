@@ -14,7 +14,12 @@ import datetime
 from time import time
 from pyorbital.orbital import get_observer_look
 from pyorbital.astronomy import get_alt_az
-sys.path.append("/g/data/k10/dr1709/code/Personal/Tools")
+sys.path.append(
+  os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    "Tools"
+  )
+)
 from him8analysis import read_h8_folder, halve_res, quarter_res, generate_band_arrays
 from caliop_tools import number_to_bit, custom_feature_conversion, calipso_to_datetime
 
