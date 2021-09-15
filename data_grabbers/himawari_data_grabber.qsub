@@ -1,0 +1,13 @@
+#!/bin/bash
+#PBS -q copyq
+#PBS -l walltime=01:30:00
+#PBS -l mem=5GB
+#PBS -l storage=gdata/k10+gdata/hh5+scratch/k10
+#PBS -l jobfs=10GB
+#PBS -P k10
+
+module use /g/data3/hh5/public/modules
+module load conda/analysis3-unstable
+
+python /g/data/k10/dr1709/code/Personal/Collocation/v2/data_grabbers/himawari_data_grabber.py -f $FNAME -d $TARGET_DIR
+exit

@@ -1,0 +1,17 @@
+#!/bin/bash
+#PBS -l walltime=00:10:00
+#PBS -l mem=60GB
+#PBS -l jobfs=12GB
+#PBS -l ncpus=6
+#PBS -l storage=gdata/k10+gdata/hh5+gdata/rt52
+#PBS -l other=hyperthread
+#PBS -q normal
+#PBS -P k10
+
+module use /g/data3/hh5/public/modules
+module load conda/analysis3-unstable
+# echo $CALIOP_FILE
+# echo $CALIOP_LIST
+# echo $TARGET_DIR
+python -W ignore /g/data/k10/dr1709/code/Personal/Collocation/v2/collocators/parallel_collocator.py -f $FNAME -d $TARGET_DIR
+exit

@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -q copyq
+#PBS -l walltime=00:10:00
+#PBS -l mem=200MB
+#PBS -l storage=gdata/k10+gdata/hh5+scratch/k10
+#PBS -P k10
+
+module use /g/data3/hh5/public/modules
+module load conda/analysis3-unstable
+echo $TARGET_DIR
+echo $LIST
+echo $FNAME
+echo "-----------------"
+python /g/data/k10/dr1709/code/Personal/Collocation/v2/data_grabbers/caliop_data_grabber.py -l $LIST -f $FNAME -d $TARGET_DIR
+

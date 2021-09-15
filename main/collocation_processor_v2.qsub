@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -l walltime=48:00:00
+#PBS -l mem=4GB
+#PBS -l ncpus=1
+#PBS -l storage=gdata/k10+gdata/hh5
+#PBS -l other=hyperthread
+#PBS -q normal
+#PBS -P k10
+
+module use /g/data3/hh5/public/modules
+module load conda/analysis3-unstable
+# echo $CALIOP_FILE
+# echo $CALIOP_LIST
+# echo $TARGET_DIR
+python /g/data/k10/dr1709/code/Personal/Collocation/v2/main/collocation_processor_v2.py -f $CALIOP_FILE -l $CALIOP_LIST -d $TARGET_DIR
+exit
